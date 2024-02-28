@@ -56,9 +56,9 @@ function switchTab(ev, tab) {
     }
 
     // Activate tab
-    document.getElementById(tab).style.display = "block";
+    document.querySelector('[data-tab=' + tab + ']').style.display = "block";;
+    //document.getElementById(tab).style.display = "block";
     ev.currentTarget.className += " active";
-    console.log(tab);
 }
 
 const tabButtons = document.querySelectorAll('.tab-button');

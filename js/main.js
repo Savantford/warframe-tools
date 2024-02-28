@@ -3,6 +3,7 @@ import { WF } from "./warframe-data.js";
 const switchbtn = document.getElementById("switch");
 const display = document.getElementById("display");
 const input = document.querySelectorAll("input");
+
 let value = "";
 
 const wfSelect = document.getElementById('wf-select');
@@ -59,6 +60,12 @@ function switchTab(ev, tab) {
     ev.currentTarget.className += " active";
     console.log(tab);
 }
+
+const tabButton = document.getElementById("tab-button");
+
+tabButton.onclick = function(ev) {
+    console.log(ev)
+};
 
 switchbtn.addEventListener("click", () => {
     if(switchbtn.checked == true){

@@ -1,4 +1,4 @@
-export default const WF = {
+export const WF = {
   "Ash": {
     "health": 555,
     "shield_cap": 370,

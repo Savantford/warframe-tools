@@ -1,4 +1,4 @@
-import WF from "./warframe-data";
+import { WF } from "./warframe-data";
 
 const switchbtn = document.getElementById("switch");
 const display = document.getElementById("display");

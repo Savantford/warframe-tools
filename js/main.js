@@ -31,8 +31,8 @@ function setBaseValues(data) {
 }
 
 wfSelect.onchange = function() {
-    selectData = WF[name];
-    setBaseValues(selectData);
+    selectedData = WF[name];
+    setBaseValues(selectedData);
 };
 
 switchbtn.addEventListener("click", () => {

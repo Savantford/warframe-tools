@@ -10,8 +10,8 @@ function myFunction(value) {
 }
 
 const wfSelect = document.getElementById('wf-select');
-
-wfSelect.options = Object.keys(WF);
+console.log(wfSelect);
+//wfSelect.options = Object.keys(WF);
 
 wfSelect.onchange = function() { 
     myFunction(this.value);

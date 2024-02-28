@@ -56,8 +56,8 @@ function switchTab(ev, tab) {
     }
 
     // Activate tab
-    document.querySelector('[data-tab=' + tab + ']').style.display = "block";;
-    //document.getElementById(tab).style.display = "block";
+    //document.querySelector('#[data-tab=' + tab + ']').style.display = "block";;
+    document.getElementById('tab-' + tab).style.display = "block";
     ev.currentTarget.className += " active";
 }
 

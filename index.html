@@ -14,55 +14,88 @@
 
 <body data-theme="">
 
-    <div class="pair">
-        <label>Warframe</label>
-        <select id="wf-select">
-            <option value="" selected disabled hidden>Select a Warframe</option>
-        </select>
-    </div>
+    <div class="warframe-box">
+        <div class="pair">
+            <label>Warframe</label>
+            <select id="wf-select">
+                <option value="" selected disabled hidden>Select a Warframe</option>
+            </select>
+        </div>
 
-    <div class="tabber">
-        <button class="tab-button" data-tab="strength">Strength</button>
-        <button class="tab-button" data-tab="armor">Armor</button>
-        <button class="tab-button" data-tab="health">Health</button>
-        <button class="tab-button" data-tab="shield">Shield</button>
-        <button class="tab-button" data-tab="energy">Energy</button>
-    </div>
-
-    <div id="tab-strength" class="tab-content">
         <div class="pair">
             <label>Ability Strength</label>
-            <div id="base-strength">—</div>
+            <div class="base-strength">100%</div>
         </div>
-    </div>
-      
-    <div id="tab-armor" class="tab-content">
+                
         <div class="pair">
             <label>Base Armor</label>
-            <div id="base-armor">—</div>
-        </div>
-    </div>
-    
-    <div id="tab-health" class="tab-content">
+            <div class="base-armor">—</div>
+        </div>       
+        
         <div class="pair">
             <label>Base Health</label>
-            <div id="base-health">—</div>
+            <div class="base-health">—</div>
         </div>
-    </div>
-
-    <div id="tab-shield" class="tab-content">
+        
         <div class="pair">
             <label>Base Shield</label>
-            <div id="base-shield">—</div>
+            <div class="base-shield">—</div>
         </div>
-    </div>
-
-    <div id="tab-energy" class="tab-content">
+        
         <div class="pair">
             <label>Base Energy</label>
-            <div id="base-energy">—</div>
+            <div class="base-energy">—</div>
         </div>
+        
     </div>
+
+    <div class="tabs-container">
+        
+        <div class="tabber">
+            <button class="tab-button" data-tab="strength">Strength</button>
+            <button class="tab-button" data-tab="armor">Armor</button>
+            <button class="tab-button" data-tab="health">Health</button>
+            <button class="tab-button" data-tab="shield">Shield</button>
+            <button class="tab-button" data-tab="energy">Energy</button>
+        </div>
+    
+        <div id="tab-strength" class="tab-content">
+            <div class="pair">
+                <label>Ability Strength</label>
+                <div class="base-strength">100%</div>
+            </div>
+        </div>
+          
+        <div id="tab-armor" class="tab-content">
+            <div class="pair">
+                <label>Base Armor</label>
+                <div class="base-armor">—</div>
+            </div>
+        </div>
+        
+        <div id="tab-health" class="tab-content">
+            <div class="pair">
+                <label>Base Health</label>
+                <div class="base-health">—</div>
+            </div>
+        </div>
+    
+        <div id="tab-shield" class="tab-content">
+            <div class="pair">
+                <label>Base Shield</label>
+                <div class="base-shield">—</div>
+            </div>
+        </div>
+    
+        <div id="tab-energy" class="tab-content">
+            <div class="pair">
+                <label>Base Energy</label>
+                <div class="base-energy">—</div>
+            </div>
+        </div>
+
+    </div>
+    
 
     
     

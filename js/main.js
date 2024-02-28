@@ -61,11 +61,12 @@ function switchTab(ev, tab) {
     console.log(tab);
 }
 
-const tabButton = document.getElementById("tab-button");
+const tabButtons = document.querySelectorAll('.tab-button');
 
-tabButton.onclick = function(ev) {
-    console.log(ev)
-};
+tabButtons.forEach(el => el.addEventListener('click', event => {
+  console.log(event.target.getAttribute("data-tab"));
+  switchTab(event, event.target.getAttribute("data-tab"));
+}));
 
 switchbtn.addEventListener("click", () => {
     if(switchbtn.checked == true){

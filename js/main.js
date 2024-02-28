@@ -1,3 +1,5 @@
+import WF from "warframe-data.js";
+
 const switchbtn = document.getElementById("switch");
 const display = document.getElementById("display");
 const input = document.querySelectorAll("input");

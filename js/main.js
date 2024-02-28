@@ -1,6 +1,5 @@
 import { WF } from "./warframe-data.js";
 
-const switchbtn = document.getElementById("switch");
 const display = document.getElementById("display");
 const input = document.querySelectorAll("input");
 
@@ -68,8 +67,11 @@ tabButtons.forEach(el => el.addEventListener('click', event => {
   switchTab(event, event.target.getAttribute("data-tab"));
 }));
 
-switchbtn.addEventListener("click", () => {
-    if(switchbtn.checked == true){
+// Theme switch
+const themeSwitch = document.getElementById("theme-switch");
+
+themeSwitch.addEventListener("click", () => {
+    if(themeSwitch.checked == true){
         document.body.setAttribute("data-theme", "dark");
     }else{
         document.body.setAttribute("data-theme", "");

@@ -6,20 +6,25 @@
     box-sizing: border-box;
     font-family: 'Zen Dots', cursive;
 }
+
 html{
     --bg: #f1f1f1;
     --sec_bg: #fff;
     --color: #000;
     --hover_color: #e7e7e7;
 }
+
 body[data-theme="dark"]{
     --bg: #0e0e0e;
     --sec_bg: #222222;
     --color: #fff;
     --hover_color: #424242;
 }
+
 body{
     background: var(--bg);
+    display: flex;
+    gap: 20px;
 }
 
 /* Style the tab */

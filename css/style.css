@@ -27,6 +27,31 @@ body{
     gap: 20px;
 }
 
+/* Basic Elements */
+.pair {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Warframe Box */
+.warframe-box {
+    height: fit-content;
+    margin: 3px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.warframe-box > :first-child {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+
 /* Style the tab */
 .tabber {
     overflow: hidden;
@@ -62,13 +87,6 @@ body{
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
-
-/* Elements */
-.pair {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
 }
 
 .main{

@@ -19,10 +19,10 @@ let selectedData = {};
 
 // Create a Warframe dropdown listener
 function setBaseValues(data) { 
-    document.getElementById("base-armor") = data.armor;
-    document.getElementById("base-health") = data.health;
-    document.getElementById("base-shield") = data.shield_cap;
-    document.getElementById("base-energy") = data.energy_cap;
+    document.getElementById("base-armor").innerHTML = data.armor;
+    document.getElementById("base-health").innerHTML = data.health;
+    document.getElementById("base-shield").innerHTML = data.shield_cap;
+    document.getElementById("base-energy").innerHTML = data.energy_cap;
     //data.os_max
     //data.eh;
     //data.ehos;

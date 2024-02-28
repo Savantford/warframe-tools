@@ -4,7 +4,19 @@ const switchbtn = document.getElementById("switch");
 const display = document.getElementById("display");
 const input = document.querySelectorAll("input");
 let value = "";
-console.log(WF);
+
+function myFunction(value) { 
+    console.log(value);
+}
+
+const wfSelect = document.getElementById('wf-select');
+
+wfSelect.options = Object.keys(WF);
+
+wfSelect.onchange = function() { 
+    myFunction(this.value);
+};
+
 switchbtn.addEventListener("click", () => {
     if(switchbtn.checked == true){
         document.body.setAttribute("data-theme", "dark");

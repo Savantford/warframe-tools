@@ -33,7 +33,7 @@ function setBaseValues(data) {
 }
 
 wfSelect.onchange = function() {
-    selectedData = WF[name];
+    selectedData = WF[this.value];
     console.log(selectedData)
     setBaseValues(selectedData);
 };

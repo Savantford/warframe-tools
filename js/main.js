@@ -19,8 +19,6 @@ let selectedData = {};
 
 // Create a Warframe dropdown listener
 function setBaseValues(data) {
-    console.log(selectedData)
-    console.log(data)
     document.getElementById("base-armor").innerHTML = data.armor;
     document.getElementById("base-health").innerHTML = data.health;
     document.getElementById("base-shield").innerHTML = data.shield_cap;
@@ -34,9 +32,33 @@ function setBaseValues(data) {
 
 wfSelect.onchange = function() {
     selectedData = WF[this.value];
-    console.log(selectedData)
+    
     setBaseValues(selectedData);
 };
+
+// Tabs
+function switchTab(ev, tab) {
+    var i, tabContent, tabButton;
+
+    // Hide tabs
+    tabContent = document.getElementsByClassName("tab-content");
+
+    for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+
+    // Style buttons
+    tabButton = document.getElementsByClassName("tab-button");
+
+    for (i = 0; i < tabButton.length; i++) {
+      tabButton[i].className = tabButton[i].className.replace(" active", "");
+    }
+
+    // Activate tab
+    document.getElementById(tab).style.display = "block";
+    ev.currentTarget.className += " active";
+    console.log(tab);
+}
 
 switchbtn.addEventListener("click", () => {
     if(switchbtn.checked == true){

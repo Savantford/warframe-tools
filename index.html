@@ -13,33 +13,49 @@
 </head>
 
 <body data-theme="">
-    <div>
-        <label>Warframe</label>
-        <select id="wf-select">
-            <option value="" selected disabled hidden>Select a Warframe</option>
-        </select>
-        
+
+    <div class="tabber">
+        <button class="tab-button" onclick="switchTab(event, 'armor')">Armor</button>
+        <button class="tab-button" onclick="switchTab(event, 'Paris')">Paris</button>
+        <button class="tab-button" onclick="switchTab(event, 'Tokyo')">Tokyo</button>
     </div>
 
-    <div class="armor-section">
-        <label>Armor</label>
-        <div id="base-armor"></div>
+    <div id="strength-tab" class="tab-content">
+        <div class="pair">
+            <label>Ability Strength</label>
+            <div id="base-strength">—</div>
+        </div>
+    </div>
+      
+    <div id="armor-tab" class="tab-content">
+        <div class="pair">
+            <label>Base Armor</label>
+            <div id="base-armor">—</div>
+        </div>
+    </div>
+    
+    <div id="health-tab" class="tab-content">
+        <div class="pair">
+            <label>Base Health</label>
+            <div id="base-health">—</div>
+        </div>
     </div>
 
-    <div class="health-section">
-        <label>Health</label>
-        <div id="base-health"></div>
+    <div id="shield-tab" class="tab-content">
+        <div class="pair">
+            <label>Base Shield</label>
+            <div id="base-shield">—</div>
+        </div>
     </div>
 
-    <div class="shield-section">
-        <label>Shield</label>
-        <div id="base-shield"></div>
+    <div id="energy-tab" class="tab-content">
+        <div class="pair">
+            <label>Base Energy</label>
+            <div id="base-energy">—</div>
+        </div>
     </div>
 
-    <div class="energy-section">
-        <label>Energy</label>
-        <div id="base-energy"></div>
-    </div>
+    
     
     <div class="main">
         <div class="calculator">

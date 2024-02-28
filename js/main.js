@@ -5,13 +5,20 @@ const display = document.getElementById("display");
 const input = document.querySelectorAll("input");
 let value = "";
 
+const wfSelect = document.getElementById('wf-select');
+
+const wfNames = Object.keys(WF);
+
+wfNames.forEach(n => {
+    console.log(n);
+    const newOption = new Option(n,n);
+    wfSelect.add(newOption,undefined);
+});
+
+// Create a Warframe dropdown listener
 function myFunction(value) { 
     console.log(value);
 }
-
-const wfSelect = document.getElementById('wf-select');
-console.log(wfSelect);
-//wfSelect.options = Object.keys(WF);
 
 wfSelect.onchange = function() { 
     myFunction(this.value);

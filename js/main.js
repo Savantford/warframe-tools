@@ -18,7 +18,9 @@ wfNames.forEach(n => {
 let selectedData = {};
 
 // Create a Warframe dropdown listener
-function setBaseValues(data) { 
+function setBaseValues(data) {
+    console.log(selectedData)
+    console.log(data)
     document.getElementById("base-armor").innerHTML = data.armor;
     document.getElementById("base-health").innerHTML = data.health;
     document.getElementById("base-shield").innerHTML = data.shield_cap;
@@ -32,6 +34,7 @@ function setBaseValues(data) {
 
 wfSelect.onchange = function() {
     selectedData = WF[name];
+    console.log(selectedData)
     setBaseValues(selectedData);
 };
 

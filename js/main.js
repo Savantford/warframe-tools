@@ -7,21 +7,32 @@ let value = "";
 
 const wfSelect = document.getElementById('wf-select');
 
+// Populate Warframe dropdown with names
 const wfNames = Object.keys(WF);
 
 wfNames.forEach(n => {
-    console.log(n);
     const newOption = new Option(n,n);
     wfSelect.add(newOption,undefined);
 });
 
+let selectedData = {};
+
 // Create a Warframe dropdown listener
-function myFunction(value) { 
-    console.log(value);
+function setBaseValues(data) { 
+    document.getElementById("base-armor") = data.armor;
+    document.getElementById("base-health") = data.health;
+    document.getElementById("base-shield") = data.shield_cap;
+    document.getElementById("base-energy") = data.energy_cap;
+    //data.os_max
+    //data.eh;
+    //data.ehos;
+    //data.energy_spawn;
+    //data.sprint;
 }
 
-wfSelect.onchange = function() { 
-    myFunction(this.value);
+wfSelect.onchange = function() {
+    selectData = WF[name];
+    setBaseValues(selectData);
 };
 
 switchbtn.addEventListener("click", () => {

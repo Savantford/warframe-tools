@@ -80,11 +80,30 @@ themeSwitch.addEventListener("click", () => {
 });
 
 // Stats breakdown template
-function breakdownTemplate(key, data) {
-    return `
-        <h1>${key}</h1>
-        <p>${data}</p>
+function breakdownTemplate(key, data, stat) {
+    const cssKey = key.replace(" ", "-");
+
+    let html = `
+        <div class="modifier-row">
+            <label>${key}</label>
+            <input type="checkbox" id="${cssKey}-checkbox" />
+    `;
+
+    if (data[stat].percentage) {
+        const pctg = data[stat].percentage[0];
+
+        html += `<div id="${cssKey}-pctg">` + (pctg >= 0 ? `+` : ``) + `%</div>`;
+        
+    } else {
+
+    }
+    
+    html += `
+        <div id="${cssKey}-contribution"></div>
+    </div>
     `
+    
+    return html;
 }
 
 // 
@@ -93,12 +112,12 @@ let templateStrength = ``;
 for (const k in ModData) {
     const data = ModData[k];
 
-    templateStrength += breakdownTemplate(k, data);
+    templateStrength += breakdownTemplate(k, data, 'strength');
 }
 
 //tab-strength
 const tabStrength = document.getElementById("tab-strength");
-tabStrength.innerHTML = templateStrength;
+tabStrength.innerHTML += templateStrength;
 
 input.forEach((e) => {
     e.addEventListener("click", (event) => {

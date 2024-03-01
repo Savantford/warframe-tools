@@ -88,15 +88,17 @@ function breakdownTemplate(key, data) {
 }
 
 // 
-let strengthTemplate = ``;
+let templateStrength = ``;
 
 for (const k in ModData) {
     const data = Modata[k];
 
-    strengthTemplate += breakdownTemplate(k, data);
+    templateStrength += breakdownTemplate(k, data);
 }
 
 //tab-strength
+const tabStrength = document.getElementById("tab-strength");
+tabStrength.innerHTML = templateStrength;
 
 input.forEach((e) => {
     e.addEventListener("click", (event) => {

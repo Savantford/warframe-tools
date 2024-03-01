@@ -68,16 +68,35 @@ tabButtons.forEach(el => el.addEventListener('click', event => {
   switchTab(event, event.target.getAttribute("data-tab"));
 }));
 
-// Theme switch
-const themeSwitch = document.getElementById("theme-switch");
+// Populate tabs with templates
+let templateStrength = ``;
 
-themeSwitch.addEventListener("click", () => {
-    if(themeSwitch.checked == true){
-        document.body.setAttribute("data-theme", "dark");
-    }else{
-        document.body.setAttribute("data-theme", "");
-    }
-});
+for (const k in ModData) {
+    const data = ModData[k];
+
+    templateStrength += breakdownTemplate(k, data, 'strength');
+}
+
+const tabStrength = document.getElementById("tab-strength");
+tabStrength.innerHTML += templateStrength;
+
+// Update on input change
+input.forEach((e) => {
+    e.addEventListener("change", (ev) => {
+        updateValues();
+    })
+})
+
+/* Utility Functions */
+
+// Update values
+function updateValues() {
+    const values = {};
+
+    input.forEach(i => {
+        console.log(i)
+    })
+}
 
 // Stats breakdown template
 function breakdownTemplate(key, data, stat) {
@@ -92,7 +111,7 @@ function breakdownTemplate(key, data, stat) {
     if (data[stat].percentage) {
         const pctg = data[stat].percentage[0];
 
-        html += `<div class="value">` + (pctg >= 0 ? `+` : ``) + `${pctg}%</div>`;
+        html += `<div class="value` + (pctg >= 0 ? `">+${pctg}%` : ` red">${pctg}%`) + `</div>`;
         
     } else {
 
@@ -106,41 +125,14 @@ function breakdownTemplate(key, data, stat) {
     return html;
 }
 
-// 
-let templateStrength = ``;
+// Theme switch
+const themeSwitch = document.getElementById("theme-switch");
 
-for (const k in ModData) {
-    const data = ModData[k];
+themeSwitch.addEventListener("click", () => {
+    if(themeSwitch.checked == true){
+        document.body.setAttribute("data-theme", "dark");
+    }else{
+        document.body.setAttribute("data-theme", "");
+    }
+});
 
-    templateStrength += breakdownTemplate(k, data, 'strength');
-}
-
-//tab-strength
-const tabStrength = document.getElementById("tab-strength");
-tabStrength.innerHTML += templateStrength;
-
-input.forEach((e) => {
-    e.addEventListener("click", (event) => {
-        if(event.target.value == "="){
-            if(value.length != 0){
-                let newval = eval(value);
-                value = newval;
-                display.value = value;
-            }
-        }else if(event.target.value == 'C'){
-            value = "";
-            display.value = value;
-        }else if(event.target.value == "switch"){
-
-        }else{
-            value += event.target.value;
-            display.value = value;
-        }
-        if(!event.target.classList.contains("switch")){
-            event.target.classList.add("active");
-            setTimeout(() => {
-                event.target.classList.remove("active");
-            },400);
-        }
-    })
-})

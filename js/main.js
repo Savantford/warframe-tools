@@ -1,4 +1,5 @@
 import { WF } from "./warframe-data.js";
+import { ModData } from "./modifiers-data.js";
 
 const display = document.getElementById("display");
 const input = document.querySelectorAll("input");
@@ -77,6 +78,25 @@ themeSwitch.addEventListener("click", () => {
         document.body.setAttribute("data-theme", "");
     }
 });
+
+// Stats breakdown template
+function breakdownTemplate(key, data) {
+    return `
+        <h1>${key}</h1>
+        <p>${data}</p>
+    `
+}
+
+// 
+let strengthTemplate = ``;
+
+for (const k in ModData) {
+    const data = Modata[k];
+
+    strengthTemplate += breakdownTemplate(k, data);
+}
+
+//tab-strength
 
 input.forEach((e) => {
     e.addEventListener("click", (event) => {

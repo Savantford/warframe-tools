@@ -84,9 +84,9 @@ function breakdownTemplate(key, data, stat) {
     const cssKey = key.replace(" ", "-");
 
     let html = `
-        <div class="modifier-row">
+        <div class="modifier-row" id="">
             <label>${key}</label>
-            <input type="checkbox" id="${cssKey}-checkbox" />
+            <input classtype="checkbox" id="${cssKey}-checkbox" />
     `;
 
     if (data[stat].percentage) {

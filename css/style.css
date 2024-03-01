@@ -23,7 +23,6 @@ body[data-theme="dark"]{
 
 body {
     background: var(--bg);
-    
 }
 
 .calculator {
@@ -40,6 +39,14 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+}
+
+.modifier-row > * {
+    flex: 1;
+}
+
+.modifier-row > label {
+    flex: 3;
 }
 
 /* Warframe Box */

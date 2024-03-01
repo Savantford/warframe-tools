@@ -91,7 +91,7 @@ function breakdownTemplate(key, data) {
 let templateStrength = ``;
 
 for (const k in ModData) {
-    const data = Modata[k];
+    const data = ModData[k];
 
     templateStrength += breakdownTemplate(k, data);
 }

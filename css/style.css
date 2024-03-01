@@ -21,18 +21,24 @@ body[data-theme="dark"]{
     --hover_color: #424242;
 }
 
-body{
+body {
     background: var(--bg);
+    
+}
+
+.calculator {
     display: flex;
     gap: 20px;
     margin: 5px;
 }
 
 /* Basic Elements */
+.modifier-row,
 .pair {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 10px;
 }
 

@@ -91,6 +91,9 @@ function breakdownTemplate(key, data, stat) {
 
     if (data[stat].percentage) {
         const pctg = data[stat].percentage[0];
+        console.log(data)
+        console.log(data[stat])
+        console.log(pctg)
 
         html += `<div id="${cssKey}-pctg">` + (pctg >= 0 ? `+` : ``) + `%</div>`;
         

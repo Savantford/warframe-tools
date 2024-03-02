@@ -8,10 +8,6 @@
     color: var(--color);
 }
 
-*:hover {
-    color: var(--hover_color);
-}
-
 html {
     --bg: #f1f1f1;
     --sec_bg: #fff;
@@ -46,6 +42,10 @@ body {
     margin: 5px;
 }
 
+a:hover {
+    color: var(--hover_color);
+}
+
 /* Basic Elements */
 .modifier-row,
 .pair {
@@ -54,6 +54,11 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    transition: 0.3s;
+}
+
+modifier-row:hover {
+    background: var(--hover_color);
 }
 
 .modifier-row.header {

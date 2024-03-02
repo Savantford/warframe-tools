@@ -107,11 +107,11 @@ function breakdownTemplate(key, data, stat) {
     const cssKey = key.replace(" ", "-");
     const dat = data[stat];
     const isPctg = dat.percentage ? true : false;
-    const value = isPctg ? dat.percentage : dat.integer;
+    const value = isPctg ? dat.percentage[0] : dat.integer[0];
     const formatted = (value >= 0 ? '+' : '') + value + (isPctg ? '%' : '');
 
     let html = `
-        <div class="modifier-row" data-stat="${stat}" data-source="${cssKey}" data-value="${value} data-percentage="${isPctg}">
+        <div class="modifier-row" data-stat="${stat}" data-source="${cssKey}" data-value="${value}" data-percentage="${isPctg}">
             <label>${key}</label>
             <input class="enable" type="checkbox" />
             <div class="value` + (value >= 0 ? `` : ` red`) + `">${formatted}</div>

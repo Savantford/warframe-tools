@@ -9,21 +9,23 @@
 }
 
 html {
-    --bg: #f1f1f1;
-    --sec_bg: #fff;
+    --bg-primary: #f1f1f1;
+    --bg-secondary: #fff;
+    --bg-hover: #ddd;
     --color: #000;
-    --hover_color: #e7e7e7;
+    --color-hover: #e7e7e7;
+    --color-red: #ff0303;
 }
 
 body[data-theme="dark"] {
-    --bg: #0e0e0e;
-    --sec_bg: #222222;
+    --bg-primary: #0e0e0e;
+    --bg-secondary: #222222;
     --color: #fff;
-    --hover_color: #424242;
+    --color-hover: #424242;
 }
 
 body {
-    background: var(--bg);
+    background: var(--bg-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +35,7 @@ body {
 
 .warframe-box,
 .tabs-container {
-    background: var(--sec_bg);
+    background: var(--bg-secondary);
 }
 
 .calculator {
@@ -43,7 +45,7 @@ body {
 }
 
 a:hover {
-    color: var(--hover_color);
+    color: var(--color-hover);
 }
 
 /* Basic Elements */
@@ -57,8 +59,8 @@ a:hover {
     transition: 0.3s;
 }
 
-modifier-row:hover {
-    background: var(--hover_color);
+.modifier-row:hover {
+    background: var(--bg-hover);
 }
 
 .modifier-row.header {
@@ -94,14 +96,13 @@ modifier-row:hover {
     padding-bottom: 5px;
 }
 
-/* Style the tab */
+/* Tabber */
 .tabber {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
-  
-/* Style the buttons inside the tab */
+
 .tabber button {
     background-color: inherit;
     float: left;
@@ -112,18 +113,16 @@ modifier-row:hover {
     transition: 0.3s;
     font-size: 17px;
 }
-  
-/* Change background color of buttons on hover */
+
 .tabber button:hover {
     background-color: #ddd;
 }
-  
-/* Create an active/current tablink class */
+
 .tabber button.active {
     background-color: #ccc;
 }
   
-/* Style the tab content */
+/* Tab Content */
 .tab-content {
     width: 70vw;
     display: none;
@@ -165,10 +164,10 @@ modifier-row:hover {
 
 .theme-box input:checked ~ .box{
     left: 60%;
-    background: #ff0303;
+    background: var(--color-red);
 }
 
 /* Colors */
 .red {
-    color: #ff0303;
+    color: var(--color-red);
 }

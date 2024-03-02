@@ -105,26 +105,19 @@ function updateValues() {
 // Stats breakdown template
 function breakdownTemplate(key, data, stat) {
     const cssKey = key.replace(" ", "-");
+    const dat = data[stat];
+    const isPctg = dat.percentage ? true : false;
+    const value = isPctg ? dat.percentage : dat.integer;
+    const formatted = (value >= 0 ? '+' : '') + value + (isPctg ? '%' : '');
 
     let html = `
-        <div class="modifier-row" data-stat="${stat}" data-source="${cssKey}">
+        <div class="modifier-row" data-stat="${stat}" data-source="${cssKey}" data-value="${value} data-percentage="${isPctg}">
             <label>${key}</label>
             <input class="enable" type="checkbox" />
+            <div class="value` + (value >= 0 ? `` : ` red`) + `">${formatted}</div>
+            <div class="contribution"></div>
+        </div>
     `;
-
-    if (data[stat].percentage) {
-        const pctg = data[stat].percentage[0];
-
-        html += `<div class="value` + (pctg >= 0 ? `">+${pctg}%` : ` red">${pctg}%`) + `</div>`;
-        
-    } else {
-
-    }
-    
-    html += `
-        <div class="contribution"></div>
-    </div>
-    `
     
     return html;
 }

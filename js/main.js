@@ -95,11 +95,29 @@ inputs.forEach((e) => {
 function updateValues() {
     const values = {};
 
+    // Get applied values from checkboxes
     inputs.forEach(i => {
         if (i.checked) {
-            console.log(i.parentNode.dataset);
+            const dataset = i.parentNode.dataset;
+            if (dataset.percentage) {
+                values[dataset.stat] = {'percentage': dataset.value}
+            } else {
+                values[dataset.stat] = {'integer': dataset.value}
+            }
+            
         }
     })
+
+    // Pass down values
+    for (const key in values) {
+        const base = selectedData[key];
+        const pctg = values[key].percentage[0];
+        const integer = values[key].integer[0];
+        const sum = base * (100 + pctg)/100 + integer;
+
+        document.querySelectorAll(".total-" + key).forEach(el => el.innerHTML = sum);
+    }
+    
 }
 
 // Stats breakdown template

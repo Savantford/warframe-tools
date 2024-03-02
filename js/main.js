@@ -1,7 +1,6 @@
 import { WF } from "./warframe-data.js";
 import { ModData } from "./modifiers-data.js";
 
-const inputs = document.querySelectorAll("input");
 const display = document.getElementById("display");
 
 let value = "";
@@ -81,6 +80,8 @@ const tabStrength = document.getElementById("tab-strength");
 tabStrength.innerHTML += templateStrength;
 
 // Update on input click
+const inputs = document.querySelectorAll("input");
+
 inputs.forEach((e) => {
     console.log(e)
 

@@ -111,7 +111,7 @@ function updateValues() {
             console.log(dataset.value)
 
             if (dataset.percentage) {
-                values[dataset.stat].percentage += parseInt(dataset.value);
+                values[dataset.stat].percentage = values[dataset.stat].percentage ? values[dataset.stat].percentage + parseInt(dataset.value) : parseInt(dataset.value);
             } else {
                 values[dataset.stat].integer += parseInt(dataset.value);
             }

@@ -97,7 +97,7 @@ function updateValues() {
 
     inputs.forEach(i => {
         console.log(i)
-        console.log(i.parent)
+        console.log(i.checked)
     })
 }
 

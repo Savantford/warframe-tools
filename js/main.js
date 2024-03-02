@@ -17,19 +17,7 @@ wfNames.forEach(n => {
 
 let selectedData = {};
 
-// Create a Warframe dropdown listener
-function setBaseValues(data) {
-    document.querySelectorAll(".base-armor").forEach(el => el.innerHTML = data.armor);
-    document.querySelectorAll(".base-health").forEach(el => el.innerHTML = data.health);
-    document.querySelectorAll(".base-shield").forEach(el => el.innerHTML = data.shield_cap);
-    document.querySelectorAll(".base-energy").forEach(el => el.innerHTML = data.energy_cap);
-    //data.os_max
-    //data.eh;
-    //data.ehos;
-    //data.energy_spawn;
-    //data.sprint;
-}
-
+// Create a listener to update warframe data
 wfSelect.onchange = function() {
     selectedData = WF[this.value];
     
@@ -63,7 +51,6 @@ function switchTab(ev, tab) {
 const tabButtons = document.querySelectorAll('.tab-button');
 
 tabButtons.forEach(el => el.addEventListener('click', event => {
-  console.log(event.target.getAttribute("data-tab"));
   switchTab(event, event.target.getAttribute("data-tab"));
 }));
 
@@ -93,6 +80,21 @@ inputs.forEach((e) => {
 
 /* Utility Functions */
 
+// Create a Warframe dropdown listener
+function setBaseValues(data) {
+    document.querySelectorAll(".base-armor").forEach(el => el.innerHTML = data.armor);
+    document.querySelectorAll(".base-health").forEach(el => el.innerHTML = data.health);
+    document.querySelectorAll(".base-shield").forEach(el => el.innerHTML = data.shield_cap);
+    document.querySelectorAll(".base-energy").forEach(el => el.innerHTML = data.energy_cap);
+    //data.os_max
+    //data.eh;
+    //data.ehos;
+    //data.energy_spawn;
+    //data.sprint;
+
+    updateValues();
+}
+
 // Update values
 function updateValues() {
     const values = {
@@ -106,20 +108,16 @@ function updateValues() {
     // Get applied values from checkboxes
     inputs.forEach(i => {
         if (i.checked) {
-            console.log(i.parentNode)
             const dataset = i.parentNode.dataset;
-            console.log(dataset.value)
 
             if (dataset.percentage) {
                 values[dataset.stat].percentage = values[dataset.stat].percentage ? values[dataset.stat].percentage + parseInt(dataset.value) : parseInt(dataset.value);
             } else {
-                values[dataset.stat].integer += parseInt(dataset.value);
+                values[dataset.stat].integer = values[dataset.stat].integer ? values[dataset.stat].integer + parseInt(dataset.value) : parseInt(dataset.value);
             }
             
         }
     })
-
-    console.log(values)
 
     // Pass down values
     for (const key in values) {

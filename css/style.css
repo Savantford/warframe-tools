@@ -7,14 +7,14 @@
     font-family: 'Zen Dots', cursive;
 }
 
-html{
+html {
     --bg: #f1f1f1;
     --sec_bg: #fff;
     --color: #000;
     --hover_color: #e7e7e7;
 }
 
-body[data-theme="dark"]{
+body[data-theme="dark"] {
     --bg: #0e0e0e;
     --sec_bg: #222222;
     --color: #fff;
@@ -22,7 +22,11 @@ body[data-theme="dark"]{
 }
 
 body {
-    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 10px;
 }
 
 .calculator {

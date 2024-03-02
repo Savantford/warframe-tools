@@ -1,8 +1,8 @@
 import { WF } from "./warframe-data.js";
 import { ModData } from "./modifiers-data.js";
 
+const inputs = document.querySelectorAll("input");
 const display = document.getElementById("display");
-const input = document.querySelectorAll("input");
 
 let value = "";
 
@@ -81,7 +81,7 @@ const tabStrength = document.getElementById("tab-strength");
 tabStrength.innerHTML += templateStrength;
 
 // Update on input change
-input.forEach((e) => {
+inputs.forEach((e) => {
     e.addEventListener("change", (ev) => {
         updateValues();
     })
@@ -91,9 +91,10 @@ input.forEach((e) => {
 
 // Update values
 function updateValues() {
+    inputs = document.querySelectorAll("input");
     const values = {};
 
-    input.forEach(i => {
+    inputs.forEach(i => {
         console.log(i)
         console.log(i.parent)
     })

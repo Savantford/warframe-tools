@@ -99,10 +99,11 @@ function updateValues() {
     inputs.forEach(i => {
         if (i.checked) {
             const dataset = i.parentNode.dataset;
+
             if (dataset.percentage) {
-                values[dataset.stat] = {'percentage': dataset.value}
+                values[dataset.stat]?.percentage += dataset.value;
             } else {
-                values[dataset.stat] = {'integer': dataset.value}
+                values[dataset.stat]?.integer += dataset.value;
             }
             
         }

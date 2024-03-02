@@ -84,10 +84,16 @@ a:hover {
 
 .modifier-row > * {
     flex: 1;
+    text-align: right;
 }
 
 .modifier-row > label {
     flex: 3;
+    text-align: left;
+}
+
+.modifier-row > .enable {
+    text-align: center;
 }
 
 /* */

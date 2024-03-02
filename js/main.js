@@ -106,7 +106,7 @@ function updateValues() {
     // Get applied values from checkboxes
     inputs.forEach(i => {
         if (i.checked) {
-            console.log(i)
+            console.log(i.parentNode)
             const dataset = i.parentNode.dataset;
 
             if (dataset.percentage) {

@@ -74,11 +74,14 @@ a:hover {
 }
 
 .modifier-row.header {
-    border-bottom: 1px solid;
-    padding-bottom: 5px;
+    padding: 5px 12px;
     background: #ccc;
 }
 
+.modifier-row.total {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
 
 .modifier-row > * {
     flex: 1;

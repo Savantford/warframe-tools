@@ -108,6 +108,7 @@ function updateValues() {
         if (i.checked) {
             console.log(i.parentNode)
             const dataset = i.parentNode.dataset;
+            console.log(dataset.value)
 
             if (dataset.percentage) {
                 values[dataset.stat].percentage += parseInt(dataset.value);

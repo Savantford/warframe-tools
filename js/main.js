@@ -79,14 +79,12 @@ for (const k in ModData) {
 const tabStrength = document.getElementById("tab-strength");
 tabStrength.innerHTML += templateStrength;
 
-// Update on input click
+// Add listeners to inputs to update values
 const inputs = document.querySelectorAll("input");
 
 inputs.forEach((e) => {
-    console.log(e)
 
     e.addEventListener('change', (event) => {
-        console.log('clicked');
         updateValues();
     })
 })
@@ -95,7 +93,6 @@ inputs.forEach((e) => {
 
 // Update values
 function updateValues() {
-    inputs = document.querySelectorAll("input");
     const values = {};
 
     inputs.forEach(i => {

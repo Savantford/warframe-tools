@@ -80,9 +80,10 @@ for (const k in ModData) {
 const tabStrength = document.getElementById("tab-strength");
 tabStrength.innerHTML += templateStrength;
 
-// Update on input change
+// Update on input click
 inputs.forEach((e) => {
-    e.addEventListener("change", (ev) => {
+    e.addEventListener("click", (ev) => {
+        console.log('clicked');
         updateValues();
     })
 })

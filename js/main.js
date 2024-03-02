@@ -96,7 +96,7 @@ function updateValues() {
     const values = {};
 
     inputs.forEach(i => {
-        console.log(i)
+        console.log(i.parentNode)
         console.log(i.checked)
     })
 }

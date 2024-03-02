@@ -82,6 +82,8 @@ tabStrength.innerHTML += templateStrength;
 // Add listeners to inputs to update values
 const inputs = document.querySelectorAll("input");
 
+updateValues();
+
 inputs.forEach((e) => {
 
     e.addEventListener('change', (event) => {
@@ -98,6 +100,7 @@ function updateValues() {
     // Get applied values from checkboxes
     inputs.forEach(i => {
         if (i.checked) {
+            console.log(i)
             const dataset = i.parentNode.dataset;
 
             if (dataset.percentage) {
@@ -114,8 +117,8 @@ function updateValues() {
     // Pass down values
     for (const key in values) {
         const base = selectedData[key];
-        const pctg = values[key].percentage ? values[key].percentage[0] : 0;
-        const integer = values[key].integer ? values[key].integer[0] : 0;
+        const pctg = values[key].percentage ? values[key].percentage : 0;
+        const integer = values[key].integer ? values[key].integer : 0;
         const hasTotalPctg = key === 'strength' ? true : false;
         const totalPctg = (100 + pctg);
         const sum = base * totalPctg/100 + integer;

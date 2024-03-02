@@ -59,16 +59,26 @@ a:hover {
     transition: 0.3s;
 }
 
+.modifier-row {
+    padding: 1px 12px;
+}
+
 .modifier-row:hover {
     background: var(--bg-hover);
 }
 
-.modifier-row.header {
+.modifier-row.header,
+.modifier-row.total {
     font-weight: bold;
-    border-bottom: 1px solid;
     margin-bottom: 5px;
-    padding-bottom: 5px;
 }
+
+.modifier-row.header {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+    background: #ccc;
+}
+
 
 .modifier-row > * {
     flex: 1;
@@ -126,7 +136,6 @@ a:hover {
 .tab-content {
     width: 70vw;
     display: none;
-    padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
 }

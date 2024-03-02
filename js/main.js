@@ -110,9 +110,9 @@ function updateValues() {
             const dataset = i.parentNode.dataset;
 
             if (dataset.percentage) {
-                values[dataset.stat].percentage += dataset.value;
+                values[dataset.stat].percentage += parseInt(dataset.value);
             } else {
-                values[dataset.stat].integer += dataset.value;
+                values[dataset.stat].integer += parseInt(dataset.value);
             }
             
         }
@@ -129,7 +129,7 @@ function updateValues() {
         const totalPctg = (100 + pctg);
         const sum = base * totalPctg/100 + integer;
 
-        document.querySelectorAll(".total-" + key).forEach(el => el.innerHTML = hasTotalPctg ? totalPctg : sum);
+        document.querySelectorAll(".total-" + key).forEach(el => el.innerHTML = hasTotalPctg ? totalPctg + '%' : sum);
     }
 
 }

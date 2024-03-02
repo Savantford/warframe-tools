@@ -95,7 +95,13 @@ inputs.forEach((e) => {
 
 // Update values
 function updateValues() {
-    const values = {};
+    const values = {
+        'strength': {},
+        'armor': {},
+        'health': {},
+        'shield': {},
+        'energy': {},
+    };
 
     // Get applied values from checkboxes
     inputs.forEach(i => {

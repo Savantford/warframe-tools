@@ -66,12 +66,12 @@ for (const k in ModData) {
 const tabStrength = document.getElementById("tab-strength");
 tabStrength.innerHTML += templateStrength;
 
-// Add listeners to inputs to update values
-const inputs = document.querySelectorAll("input");
+// Add listeners to .enable checkboxes to update values
+const enableCheckboxes = document.querySelectorAll("input.enable");
 
 updateValues();
 
-inputs.forEach((e) => {
+enableCheckboxes.forEach((e) => {
 
     e.addEventListener('change', (event) => {
         updateValues();
@@ -106,7 +106,7 @@ function updateValues() {
     };
 
     // Get applied values from checkboxes
-    inputs.forEach(i => {
+    enableCheckboxes.forEach(i => {
         if (i.checked) {
             const dataset = i.parentNode.dataset;
 

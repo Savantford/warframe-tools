@@ -114,6 +114,10 @@ function updateValues() {
         const pctg = values[key].percentage ? values[key].percentage[0] : 0;
         const integer = values[key].integer ? values[key].integer[0] : 0;
         const sum = base * (100 + pctg)/100 + integer;
+        console.log(base)
+        console.log(pctg)
+        console.log(integer)
+        console.log(sum)
 
         document.querySelectorAll(".total-" + key).forEach(el => el.innerHTML = sum);
     }

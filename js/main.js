@@ -82,7 +82,9 @@ tabStrength.innerHTML += templateStrength;
 
 // Update on input click
 inputs.forEach((e) => {
-    e.addEventListener("click", (ev) => {
+    console.log(e)
+
+    e.addEventListener('change', (event) => {
         console.log('clicked');
         updateValues();
     })

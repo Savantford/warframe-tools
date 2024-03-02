@@ -108,6 +108,8 @@ function updateValues() {
         }
     })
 
+    console.log(values)
+
     // Pass down values
     for (const key in values) {
         const base = selectedData[key];
@@ -116,10 +118,6 @@ function updateValues() {
         const hasTotalPctg = key === 'strength' ? true : false;
         const totalPctg = (100 + pctg);
         const sum = base * totalPctg/100 + integer;
-        console.log(base)
-        console.log(pctg)
-        console.log(integer)
-        console.log(sum)
 
         document.querySelectorAll(".total-" + key).forEach(el => el.innerHTML = hasTotalPctg ? totalPctg : sum);
     }

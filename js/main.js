@@ -96,8 +96,9 @@ function updateValues() {
     const values = {};
 
     inputs.forEach(i => {
-        console.log(i.parentNode)
-        console.log(i.checked)
+        if (i.checked) {
+            console.log(i.parentNode.dataset);
+        }
     })
 }
 
@@ -106,7 +107,7 @@ function breakdownTemplate(key, data, stat) {
     const cssKey = key.replace(" ", "-");
 
     let html = `
-        <div class="modifier-row" id="${stat}-${cssKey}">
+        <div class="modifier-row" data-stat="${stat}" data-source="${cssKey}">
             <label>${key}</label>
             <input class="enable" type="checkbox" />
     `;
